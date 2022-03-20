@@ -34,6 +34,10 @@ class AccountRepository implements IAccountRepository {
         return this.accounts.find(account => account.phone === phone);
     }
 
+    async find(id: string): Promise<Account | undefined> {
+        return this.accounts.find(account => account.id === id);
+    }
+
 }
 
 export { AccountRepository }

@@ -1,11 +1,11 @@
 class Account {
-    id?: string;
+    id!: string;
     name!: string;
     cep!: string;
     email!: string;
     password!: string;
     phone!: string;
-    created_at?: Date;
+    created_at!: Date;
 
     constructor() {
         if (!this.id) {
