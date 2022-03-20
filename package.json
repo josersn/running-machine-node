@@ -4,7 +4,9 @@
   "description": "Scalable back-end to ESG project",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc",
+    "start": "node dist/src/infrastructure/server.js"
   },
   "keywords": [],
   "author": "",
