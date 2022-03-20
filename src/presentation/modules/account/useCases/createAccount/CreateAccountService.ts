@@ -1,6 +1,7 @@
-import { Account } from "../../../../domain/account/entities/Account";
-import { IAccountRepository } from "../../../../domain/account/repositories/interfaces/IAccountRepository"
-import { ICreateAccount } from "../dtos/AccountDTO"
+import { Account } from "../../../../../domain/account/entities/Account";
+import { IAccountRepository } from "../../../../../domain/account/repositories/interfaces/IAccountRepository";
+import { ICreateAccount } from "../../dtos/AccountDTO";
+
 
 class CreateAccountService {
 

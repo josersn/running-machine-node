@@ -1,4 +1,4 @@
-import { AccountRepository } from "../../../../domain/account/repositories/AccountRepository";
+import { AccountRepository } from "../../../../../domain/account/repositories/AccountRepository";
 import { CreateAccountService } from "./CreateAccountService";
 
 let sut: CreateAccountService;
