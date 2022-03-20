@@ -1,11 +1,4 @@
-
-interface ICreateAccount {
-    name: string,
-    cep: string,
-    email: string,
-    password: string,
-    phone: string
-}
+import { ICreateAccount } from "../dtos/AccountDTO"
 
 class CreateAccountService {
     execute({ name, cep, email, password, phone }: ICreateAccount) {
