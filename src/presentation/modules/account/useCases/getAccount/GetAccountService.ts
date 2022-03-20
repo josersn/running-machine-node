@@ -9,6 +9,10 @@ class GetAccountService {
     async execute(id: string): Promise<Account | undefined> {
         const account = await this.repository.find(id);
 
+        if(!account) {
+            throw new Error("Account not found");
+        }
+
         return account;
     }
 }

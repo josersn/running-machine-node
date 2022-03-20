@@ -31,4 +31,10 @@ describe('Get Account Service', () => {
         expect(accountFound?.id).toEqual(account.id);
 
     });
+
+    it('Should not able to a get a non exist account', async () => {
+        await expect(sut.execute('MOCK_ID'))
+            .rejects.
+            toThrowError(Error("Account not found"));
+    })
 });
