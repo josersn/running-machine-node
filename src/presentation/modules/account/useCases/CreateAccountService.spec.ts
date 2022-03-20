@@ -38,4 +38,28 @@ describe('Create Account Service', () => {
         await expect(sut.execute(data)).rejects.toThrowError(Error("Email already used"))
 
     })
+    
+    it('Should not be able to create account with phone already used', async () => {
+        
+        const data = {
+            name: "José Ramos",
+            cep: "04243-000",
+            email: "nettorammos@hotmail.com",
+            password: "123456",
+            phone: "11954936563"
+        }
+
+        await sut.execute(data);
+
+        const secondData = {
+            name: "José Ramos",
+            cep: "04243-000",
+            email: "nettorammos2@hotmail.com",
+            password: "123456",
+            phone: "11954936563"
+        }
+
+        await expect(sut.execute(secondData)).rejects.toThrowError(Error("Phone already used"))
+
+    })
 })

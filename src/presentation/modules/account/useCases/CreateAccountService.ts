@@ -14,6 +14,12 @@ class CreateAccountService {
             throw new Error("Email already used");
         }
 
+        const phoneExists = await this.repository.findByPhone(phone);
+        
+        if (phoneExists) {
+            throw new Error("Phone already used");
+        }
+
         const account = await this.repository.create({
             name, cep, email, password, phone
         });
