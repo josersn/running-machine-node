@@ -5,7 +5,7 @@ import { ICreateAccount } from "../../dtos/AccountDTO";
 
 class CreateAccountService {
 
-    constructor(private repository: IAccountRepository) { };
+    constructor(private repository: IAccountRepository) { }
 
     async execute({ name, cep, email, password, phone }: ICreateAccount): Promise<Account> {
 
@@ -16,16 +16,15 @@ class CreateAccountService {
         }
 
         const phoneExists = await this.repository.findByPhone(phone);
-        
+
         if (phoneExists) {
             throw new Error("Phone already used");
         }
 
-        const account = await this.repository.create({
+        return this.repository.create({
             name, cep, email, password, phone
         });
 
-        return account;
     }
 }
 
