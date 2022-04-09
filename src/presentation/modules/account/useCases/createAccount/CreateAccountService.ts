@@ -7,7 +7,9 @@ class CreateAccountService {
 
     constructor(private repository: IAccountRepository) { }
 
-    async execute({ name, cep, email, password, phone }: ICreateAccount): Promise<Account> {
+    async execute({
+        name, cep, email, password, phone, socialName, address, photo_url, complement
+    }: ICreateAccount): Promise<Account> {
 
         const emailExists = await this.repository.findByEmail(email);
 
@@ -22,7 +24,7 @@ class CreateAccountService {
         }
 
         return this.repository.create({
-            name, cep, email, password, phone
+            name, cep, email, password, phone, socialName, address, photo_url, complement
         });
 
     }

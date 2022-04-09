@@ -1,6 +1,10 @@
 class Account {
     id!: string;
     name!: string;
+    socialName!: string;
+    address!: string;
+    complement!: string;
+    photo_url!: string;
     cep!: string;
     email!: string;
     password!: string;

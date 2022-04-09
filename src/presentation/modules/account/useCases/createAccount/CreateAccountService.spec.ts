@@ -16,12 +16,17 @@ describe('Create Account Service', () => {
             cep: "04243-000",
             email: "nettorammos@hotmail.com",
             password: "123456",
-            phone: "11954936563"
+            phone: "11954936563",
+            socialName: "José Ramos",
+            photo_url: "MOCK_URL",
+            address: "Avenida Paulista",
+            complement: ""
         }
 
         const account = await sut.execute(data);
 
         expect(account).toBeTruthy();
+        expect(account).toHaveProperty("id");
     });
 
     it('Should not be able to create account with email already used', async () => {
@@ -30,7 +35,11 @@ describe('Create Account Service', () => {
             cep: "04243-000",
             email: "nettorammos@hotmail.com",
             password: "123456",
-            phone: "11954936563"
+            phone: "11954936563",
+            socialName: "José Ramos",
+            photo_url: "MOCK_URL",
+            address: "Avenida Paulista",
+            complement: ""
         }
 
         await sut.execute(data);
@@ -46,7 +55,11 @@ describe('Create Account Service', () => {
             cep: "04243-000",
             email: "nettorammos@hotmail.com",
             password: "123456",
-            phone: "11954936563"
+            phone: "11954936563",
+            socialName: "José Ramos",
+            photo_url: "MOCK_URL",
+            address: "Avenida Paulista",
+            complement: ""
         }
 
         await sut.execute(data);
@@ -56,7 +69,11 @@ describe('Create Account Service', () => {
             cep: "04243-000",
             email: "nettorammos2@hotmail.com",
             password: "123456",
-            phone: "11954936563"
+            phone: "11954936563",
+            socialName: "José Ramos",
+            photo_url: "MOCK_URL",
+            address: "Avenida Paulista",
+            complement: ""
         }
 
         await expect(sut.execute(secondData)).rejects.toThrowError(Error("Phone already used"))

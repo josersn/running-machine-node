@@ -9,7 +9,9 @@ class AccountRepository implements IAccountRepository {
         this.accounts = []
     }
 
-    async create({ name, email, password, phone, cep }: ICreateAccount): Promise<Account> {
+    async create({
+        name, email, password, phone, cep, address, complement, photo_url, socialName
+    }: ICreateAccount): Promise<Account> {
         const account = new Account();
 
         Object.assign(account, {
@@ -18,6 +20,10 @@ class AccountRepository implements IAccountRepository {
             password,
             phone,
             cep,
+            address,
+            complement,
+            photo_url,
+            socialName,
             created_at: new Date()
         })
 

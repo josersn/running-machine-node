@@ -1,9 +1,5 @@
-interface ICreateAccount {
-    name: string,
-    cep: string,
-    email: string,
-    password: string,
-    phone: string
-}
+import { Account } from "../../../../domain/account/entities/Account";
+
+type ICreateAccount = Omit<Account, "id" | "created_at">
 
 export { ICreateAccount }
