@@ -7,11 +7,14 @@
   </file>
   <file path="C:\Users\netto\Documents\fiap\esg\back-end\src\presentation\modules\account\useCases\createAccount\CreateAccountService.spec.ts">
     <testCase name="Create Account Service Should be able to create a account " duration="3"/>
-    <testCase name="Create Account Service Should not be able to create account with email already used" duration="6"/>
-    <testCase name="Create Account Service Should not be able to create account with phone already used" duration="1"/>
+    <testCase name="Create Account Service Should not be able to create account with email already used" duration="15"/>
+    <testCase name="Create Account Service Should not be able to create account with phone already used" duration="0"/>
   </file>
   <file path="C:\Users\netto\Documents\fiap\esg\back-end\src\presentation\modules\account\useCases\getAccount\GetAccountService.spec.ts">
-    <testCase name="Get Account Service Should be able to list the specific account " duration="3"/>
-    <testCase name="Get Account Service Should not able to a get a non exist account" duration="5"/>
+    <testCase name="Get Account Service Should be able to list the specific account " duration="2"/>
+    <testCase name="Get Account Service Should not able to a get a non exist account" duration="14"/>
+  </file>
+  <file path="C:\Users\netto\Documents\fiap\esg\back-end\src\presentation\modules\account\useCases\createExperience\CreateExperienceService.spec.ts">
+    <testCase name="Add a experiences to account Should be able to add Experiences to account" duration="2"/>
   </file>
 </testExecutions>
