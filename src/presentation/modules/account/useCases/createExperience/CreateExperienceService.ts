@@ -12,6 +12,13 @@ class CreateExperienceService {
     async execute({
         user_id, date_end, date_start, is_working_here, photo_url, text, title
     }: CreateExperienceDTO) {
+
+        const account = await this.accountRepository.find(user_id);
+        
+        if (!account) {
+            throw new Error("Account not found");
+        }
+
         return this.repository.create({
             user_id, date_end, date_start, is_working_here, photo_url, text, title
         });

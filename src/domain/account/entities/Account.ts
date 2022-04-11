@@ -1,3 +1,5 @@
+import { generatorHash } from "../../../infrastructure/providers/crypto/generatorHash.provider";
+
 class Account {
     id!: string;
     name!: string;
@@ -13,7 +15,7 @@ class Account {
 
     constructor() {
         if (!this.id) {
-            this.id = Math.random().toString();
+            this.id = generatorHash();
         }
     }
 }

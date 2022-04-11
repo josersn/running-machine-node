@@ -16,7 +16,6 @@ beforeEach(() => {
   rut = new ExperienceRepository();
   sut = new CreateExperienceService(rut, accountRepository);
 
-  accountRepository = new AccountRepository();
   createAccountService = new CreateAccountService(accountRepository);
 })
 
@@ -36,7 +35,6 @@ describe('Add a experiences to account', () => {
 
     const { id } = await createAccountService.execute(userData);
 
-
     const data = {
       user_id: id,
       date_start: "2021-09-08",
@@ -51,5 +49,20 @@ describe('Add a experiences to account', () => {
 
     expect(experience).toBeTruthy();
 
+  });
+
+  it("Should not be able to add experience to an nonexistent account", async () => {
+
+    const data = {
+      user_id: "MOCK_ID",
+      date_start: "2021-09-08",
+      date_end: undefined,
+      is_working_here: true,
+      photo_url: "MOCK_URL",
+      title: "Software Engineer",
+      text: "I do what i love ❤"
+    }
+
+    await expect(sut.execute(data)).rejects.toThrowError(Error("Account not found"));
   })
 })
