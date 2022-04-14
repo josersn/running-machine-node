@@ -48,6 +48,7 @@ describe('Add a experiences to account', () => {
     const experience = await sut.execute(data);
 
     expect(experience).toBeTruthy();
+    expect(experience.user_id).toBe(id);
 
   });
 

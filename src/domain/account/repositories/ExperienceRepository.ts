@@ -23,6 +23,11 @@ class ExperienceRepository implements IExperiencesRepository {
 
         return experience;
     }
+
+    async findByUserId(user_id: string): Promise<Experience[]> {
+        return this.experiences.filter(item => item.user_id === user_id);
+    }
+
 }
 
 export { ExperienceRepository }
